@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">shops</string>
+    <string name="title_home">首页</string>
+    <string name="title_mainTitle">专题</string>
+    <string name="title_sort">分类</string>
+    <string name="title_shopping">购物车</string>
+    <string name="title_mine">我的</string>
+    <string name="price_news_model">￥$</string>
+    <string name="cs_goods">
+        html,body,p{
+        padding:0px;
+        margin:0px;
+        text-align:center;
+        }
+    img{
+    width:100%;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    }</string>
+    <string name="tv_home">居家</string>
+    <string name="tv_food">餐厨</string>
+    <string name="tv_parts">配件</string>
+    <string name="tv_clothing">服装</string>
+    <string name="tv_likes">志趣</string>
+    <string name="str_see">大家都在看</string>
+</resources>

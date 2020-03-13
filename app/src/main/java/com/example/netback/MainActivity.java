@@ -1,46 +1,31 @@
 package com.example.netback;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-    private Button mBtn;
-    int sum;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initView();
-
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.navigation_home,R.id.navigation_mainTitle,
+                R.id.navigation_sort,R.id.navigation_shopping,R.id.navigation_mine)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(navView, navController);
     }
 
-    private void initView() {
-        mBtn = (Button) findViewById(R.id.btn);
-        mBtn.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn:
-                sum();
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void sum() {
-        for (int i = 0; i <101 ; i++) {
-           sum +=i;
-        }
-
-        Log.i("0--100sum:",sum+"");
-    }
 }
